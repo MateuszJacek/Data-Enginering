@@ -9,7 +9,8 @@ WORKDIR /code
 # Copy dependency files first (better layer caching)
 COPY "pyproject.toml" "uv.lock" ".python-version" ./
 
+RUN uv sync --locked
 
-# COPY pipeline.py .
+COPY pipeline_uv.py .
 
-# ENTRYPOINT [ "python", "pipeline_uv.py"]
+ENTRYPOINT [ "uv", "run", "python", "pipeline_uv.py"]
