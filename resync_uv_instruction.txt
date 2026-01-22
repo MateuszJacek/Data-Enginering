@@ -1,0 +1,5 @@
+If you move or rename the project directory, the .venv requires resynchronization. To do this:
+
+1. Navigate to the project directory containing the .venv folder.
+2. Run: Remove-Item -Recurse -Force .venv
+3. Rebuild the environment by running: uv sync
