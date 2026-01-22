@@ -1,3 +1,4 @@
+# 1_x series was udes to create and test ingestion script above jupyter notebook
 # for testing and creating ingestion script before add it to Dockerfile
 docker run -it --rm `
   -e POSTGRES_USER="root" `
