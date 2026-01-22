@@ -9,4 +9,5 @@ uv run python ingest_data.py `
    --chunksize=100000 `
    --target-table="yellow_taxi_data"
 
-#.\uv_commands\ingestion_sctipt_command.ps1
+# use for testing before add ingestion script to Dockerfile
+#.\uv_commands\1_3_ingestion_sctipt_command.ps1
