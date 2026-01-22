@@ -6,5 +6,5 @@ docker run -it --rm `
   -p 5432:5432 `
   postgres:18
 
-  # use that script firstly to run your data base before uv_run_ingestion_sctipt_command.ps1
-# .\uv_commands\1_1_docker_postgress_base.ps1
+# use that script firstly to run your data base before uv_run_ingestion_sctipt_command.ps1
+# .\commands\1_1_docker_postgress_base.ps1
