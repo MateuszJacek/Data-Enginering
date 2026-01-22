@@ -1,3 +1,4 @@
+# for testing and creating ingestion script before add it to Dockerfile
 docker run -it --rm `
   -e POSTGRES_USER="root" `
   -e POSTGRES_PASSWORD="root" `

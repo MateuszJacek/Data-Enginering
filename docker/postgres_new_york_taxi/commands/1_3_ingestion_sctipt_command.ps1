@@ -1,3 +1,4 @@
+# before running that script make sure that your DB is running
 uv run python ingest_data.py `
    --pg-user="root" `
    --pg-pass="root" `

@@ -1,5 +1,7 @@
 # converted from notebook.ipynb by script:uv run jupyter nbconvert --to=script notebook.ipynb
 
+import os       
+import requests  
 import pandas as pd
 import click
 from sqlalchemy import create_engine
@@ -43,12 +45,23 @@ parse_dates = [
 def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, chunksize, target_table):
 
     prefix = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/'
-    url = prefix + f'yellow_tripdata_{year}-{month:02d}.csv.gz'
+    file_name = f'yellow_tripdata_{year}-{month:02d}.csv.gz'
+    url = prefix + file_name
+
+    print(url)
+
+    print(f"Downloading {url}...")
+    r = requests.get(url)
+    with open(file_name, 'wb') as f:
+        f.write(r.content)
+    print(f"Download complete: {file_name}")
 
     engine = create_engine(f'postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}')
 
+    print('After created engine')
+
     df_iter = pd.read_csv(
-        url,
+        file_name,
         dtype=dtype,
         parse_dates=parse_dates,
         iterator=True,
@@ -56,6 +69,8 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, chunksize, targe
     )
 
     first = True
+
+    print('After get df_ite, before first chunk')
 
     for df_chunk in tqdm(df_iter):
 
