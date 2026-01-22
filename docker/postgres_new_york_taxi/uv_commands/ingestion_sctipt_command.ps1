@@ -7,4 +7,6 @@ uv run python ingest_data.py `
    --year=2021 `
    --month=1 `
    --chunksize=100000 `
-   --target-table="yellow_taxi_trips"
+   --target-table="yellow_taxi_data"
+
+#.\uv_commands\ingestion_sctipt_command.ps1
