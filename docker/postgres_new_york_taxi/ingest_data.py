@@ -1,3 +1,5 @@
+# converted from notebook.ipynb by script:uv run jupyter nbconvert --to=script notebook.ipynb
+
 import pandas as pd
 from sqlalchemy import create_engine
 from tqdm.auto import tqdm
