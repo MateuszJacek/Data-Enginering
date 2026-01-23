@@ -122,7 +122,7 @@ The process is complete once both tables are successfully verified within the Po
 With both **green_taxi_data** and **taxi_zone_lookup** tables fully populated, the environment is ready for the subsequent SQL analysis and the realization of Questions 3–6.
 
 
-SQL Analysis - Homework Solutions
+### SQL Analysis - Homework Solutions
 
 Before starting the analysis, I verified the measurement units for the dataset. According to the [official NYC TLC documentation](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_green.pdf), the `trip_distance` is recorded in **miles**.
 
