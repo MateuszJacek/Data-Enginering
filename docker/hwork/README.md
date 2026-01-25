@@ -202,3 +202,31 @@ LEFT JOIN public.taxi_zone AS tz ON mta."DOLocationID" = tz."LocationID";
 ```
 
 Answer: Yorkville West
+
+
+## Terraform Configuration & Homework
+
+**File Path:** `Data-Enginering\terraform\terraform_variables`
+
+### Configuration Summary
+* **`variables.tf`**: 
+    * Set `project_id` to `linen-adapter-454718-k1`. 
+    * Defined names for GCS Bucket and BigQuery Dataset. 
+    * Note: The `credentials` variable is defined with a local path but is not explicitly invoked in the provider block.
+* **`main.tf`**: 
+    * Configured GCP Provider via **Application Default Credentials (ADC)**. 
+    * Terraform automatically pulls authentication from the `$env:GOOGLE_APPLICATION_CREDENTIALS` system variable. 
+    * Resources added: `google_storage_bucket` and `google_bigquery_dataset`.
+
+
+
+---
+
+### Question 7: Terraform Workflow
+
+**Sequence:** `terraform init, terraform apply -auto-approve, terraform destroy`
+
+**Logic:**
+1. **`terraform init`**: Downloads required provider plugins and initializes the backend.
+2. **`terraform apply -auto-approve`**: This command **generates the proposed changes (Plan)** and executes them immediately without a manual "yes" prompt, fulfilling the "auto-executing" requirement in a single step.
+3. **`terraform destroy`**: Removes all resources managed by the current configuration.
