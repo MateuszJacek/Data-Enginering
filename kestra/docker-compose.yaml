@@ -65,6 +65,8 @@ services:
             basicAuth:
               username: "admin@kestra.io" # it must be a valid email address
               password: Admin1234
+          tutorial-flows:
+            enabled: false
           repository:
             type: postgres
           storage:
